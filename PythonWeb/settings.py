@@ -27,9 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS = [
-    "/Projects/tutorials/django/home/static",
-]
+# STATICFILES_DIRS = [
+#     "/Projects/tutorials/django/home/static",
+# ]
 
 # Application definition
 
@@ -130,5 +130,5 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-    '/projects/home/static',
+    os.path.join(BASE_DIR, 'static')
 ]
