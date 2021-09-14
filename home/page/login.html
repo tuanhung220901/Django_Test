@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <style>
+        body{
+            background-image: url("{% static './image/bg.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-main">
+               <h1>Travel Login Form</h1>
+            <div class="header-bottom">
+                <!-- <div class="header-right w3agile"> -->
+                    
+                    <div class="header-left-bottom agileinfo">
+                        <form action="." method='POST'>
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <input type="hidden" name="next" value="/">
+                            <div class="forgot" style="margin-bottom: 20px;">
+                                <h6 style="color: white;">New User?<a href="{% url 'register'  %}" style="color: #FF9541;">Register here</a></h6>
+                            </div>
+                            <input type="submit" value="Đăng nhập">
+                        </form>
+                    </div>
+                <!-- </div> -->
+              
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
