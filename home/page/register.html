@@ -1,16 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel Register Form</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <style>
+        body{
+            background-image: url("{% static './image/bg.jpg' %}");
+        }
+    </style>
 </head>
 <body>
-    <form action="." method='POST' >
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Đăng ký">
-    </form>
+    <div class="header">
+        <div class="header-main">
+               <h1>Travel Register Form</h1>
+            <div class="header-bottom">
+                <!-- <div class="header-right w3agile"> -->
+                    
+                    <div class="header-left-bottom agileinfo">
+                        <form action="." method='POST' >
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <div class="forgot" style="margin-bottom: 20px;">
+                                <h6 style="color: white;">Have already an account?<a href="{% url 'login'  %}" style="color: #FF9541;"> Login here</a></h6>
+                            </div>
+                            <input type="submit" value="Đăng ký">
+                        </form>
+                    </div>
+                <!-- </div> -->
+              
+            </div>
+        </div>
+    </div>
 </body>
 </html>
